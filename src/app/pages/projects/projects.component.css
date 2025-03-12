@@ -1,0 +1,66 @@
+
+/*project*/
+.filter{
+    cursor: pointer;
+  }
+  .projectul{
+    background-color: white;
+    color: #fd6f00;
+    border-radius: 50px;
+    border: #fd6f00 1px solid;
+    padding: 1% 3%;
+    font-weight: bolder;
+    white-space: nowrap;
+   
+  }
+  .activeli{
+    background-color:#fd6f00 ;
+    border-radius: 50px;
+    color: white;
+    padding: 1% 3%;
+    font-weight: bolder;
+    white-space: nowrap;
+  }
+.ProjectBackground{
+  /*background-image: url(/bg.jpg);   /*السر كان في /////// */
+  background-color: #fd6e0007;
+}
+.projectCard{
+  position: relative;
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+
+}
+.projectCard:hover.projectCard::after,.projectCard::before{
+  content: "";
+  position: absolute;
+  height: 102%;
+  width: 98%;
+  background-image: conic-gradient(from var(--angle), transparent 70%, #fd6f00 );
+  top: 50%;
+  left: 50%;
+  translate: -50% -50% ;
+  z-index: -1;
+  border-radius: 5px;
+  animation: 10s spin linear infinite;
+
+}  
+.projectCard::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+@keyframes spin {
+  from{
+    --angle:0deg;
+  }
+  to{
+    --angle:360deg;
+
+  }
+
+  
+}
